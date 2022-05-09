@@ -91,16 +91,14 @@ class WindowWrapper : public sf::RenderWindow {
 		}
 };
 
-int main( int argc, char* argv[] ) {
+int main(  ) {
 	WindowWrapper win( sf::VideoMode(800, 600), "Test Window" );
 	win.setFramerateLimit(60);
 
 	sf::Sprite spr;
 	sf::Texture text;
-	text.loadFromFile("../resource/ui/pointer.png"); // Crash Happens here
-	spr.setTexture(text);
-
-	win.registerCursor("default", "../resource/ui/pointer.png", sf::Vector2u(3,3) ); // This also causes a crash when it tries to use sf::Image::loadFromFile()
+	// text.loadFromFile("../resource/ui/pointer.png"); // Crash Happens here
+	// spr.setTexture(text);
 
 	while( win.isOpen() ) {
 		sf::Event event;
